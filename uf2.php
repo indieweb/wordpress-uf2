@@ -111,7 +111,7 @@ function uf2_the_title( $title ) {
   
   return $title;
 } 
-add_filter( 'the_title', 'uf2_the_title', 1, 99 );
+add_filter( 'the_title', 'uf2_the_title', 99, 1 );
 
 /**
  * Adds microformats v2 support to the post.
@@ -123,7 +123,7 @@ function uf2_the_post( $post ) {
   
   return $post;
 } 
-add_filter( 'the_content', 'uf2_the_post', 1, 99 );
+add_filter( 'the_content', 'uf2_the_post', 99, 1 );
 
 /**
  * Adds microformats v2 support to the comment.
@@ -135,7 +135,7 @@ function uf2_comment_text( $comment ) {
   
   return $comment;
 } 
-add_filter( 'comment_text', 'uf2_comment_text', 1, 99 );
+add_filter( 'comment_text', 'uf2_comment_text', 99, 1 );
 
 /**
  * Adds microformats v2 support to the excerpt.
@@ -147,7 +147,7 @@ function uf2_the_excerpt( $post ) {
   
   return $post;
 } 
-add_filter( 'the_excerpt', 'uf2_the_excerpt', 1, 99 );
+add_filter( 'the_excerpt', 'uf2_the_excerpt', 99, 1 );
 
 /**
  * Adds microformats v2 support to the author.
@@ -159,4 +159,4 @@ function uf2_the_author( $author ) {
   
   return $author;
 } 
-add_filter( 'the_author', 'uf2_the_author', 1, 99 );
+add_filter( 'the_author', 'uf2_the_author', 99, 1 );

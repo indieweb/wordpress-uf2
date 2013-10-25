@@ -106,7 +106,7 @@ add_filter( 'get_avatar', 'uf2_get_avatar' );
  */
 function uf2_the_title( $title ) {
   if (!is_admin() && in_the_loop()) {
-    return "<span class='e-name'>$title</span>";
+    return "<span class='p-name'>$title</span>";
   }
   
   return $title;

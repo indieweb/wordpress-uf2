@@ -15,7 +15,7 @@ function uf2_post_classes( $classes ) {
   if (!is_singular()) {
     return uf2_post_classes_helper($classes);
   }
-  
+
   return $classes;
 }
 add_filter( 'post_class', 'uf2_post_classes' );
@@ -29,7 +29,7 @@ function uf2_body_classes( $classes ) {
   } else {
     $classes = uf2_post_classes_helper($classes);
   }
-  
+
   return $classes;
 }
 add_filter( 'body_class', 'uf2_body_classes' );
@@ -40,7 +40,7 @@ add_filter( 'body_class', 'uf2_body_classes' );
 function uf2_comment_classes( $classes ) {
   $classes[] = "p-comment";
   $classes[] = "h-entry";
-    
+
   return $classes;
 }
 add_filter( 'comment_class', 'uf2_comment_classes' );
@@ -48,7 +48,7 @@ add_filter( 'comment_class', 'uf2_comment_classes' );
 function uf2_post_classes_helper($classes) {
   // Adds a class for microformats v2
   $classes[] = 'h-entry';
-  
+
   // adds microformats 2 activity-stream support
   // for pages and articles
   if ( get_post_type() == "page" ) {
@@ -57,7 +57,7 @@ function uf2_post_classes_helper($classes) {
   if ( !get_post_format() && get_post_type() == "post" ) {
     $classes[] = "h-as-article";
   }
-  
+
   // adds some more microformats 2 classes based on the
   // posts "format"
   switch ( get_post_format() ) {
@@ -79,7 +79,7 @@ function uf2_post_classes_helper($classes) {
       $classes[] = "h-as-bookmark";
       break;
   }
-  
+
   return $classes;
 }
 
@@ -106,11 +106,11 @@ add_filter( 'get_avatar', 'uf2_get_avatar' );
  */
 function uf2_the_title( $title ) {
   if (!is_admin() && in_the_loop()) {
-    return "<span class='e-name'>$title</span>";
+    return "<span class='p-name'>$title</span>";
   }
-  
+
   return $title;
-} 
+}
 add_filter( 'the_title', 'uf2_the_title', 99, 1 );
 
 /**
@@ -120,9 +120,9 @@ function uf2_the_post( $post ) {
   if (!is_admin()) {
     return "<div class='e-content'>$post</div>";
   }
-  
+
   return $post;
-} 
+}
 add_filter( 'the_content', 'uf2_the_post', 99, 1 );
 
 /**
@@ -132,9 +132,9 @@ function uf2_comment_text( $comment ) {
   if (!is_admin()) {
     return "<div class='e-content p-name p-summary'>$comment</div>";
   }
-  
+
   return $comment;
-} 
+}
 add_filter( 'comment_text', 'uf2_comment_text', 99, 1 );
 
 /**
@@ -144,9 +144,9 @@ function uf2_the_excerpt( $post ) {
   if (!is_admin()) {
     return "<div class='e-content p-summary'>$post</div>";
   }
-  
+
   return $post;
-} 
+}
 add_filter( 'the_excerpt', 'uf2_the_excerpt', 99, 1 );
 
 /**
@@ -156,7 +156,7 @@ function uf2_the_author( $author ) {
   if (!is_admin()) {
     return "<span class='p-author h-card'>$author</span>";
   }
-  
+
   return $author;
-} 
+}
 add_filter( 'the_author', 'uf2_the_author', 99, 1 );

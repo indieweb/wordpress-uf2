@@ -149,6 +149,11 @@ function uf2_comment_text( $comment ) {
           get_comment_excerpt() . "</a>\n" .
         "<time class='dt-published' datetime='" . get_comment_time("c") . "'>" .
           get_comment_time("r") . "</time>\n" .
+        "<span class='h-card p-author'>\n" .
+          "<a class='p-name u-url' href='" . get_comment_author_url()
+            . "'>" . get_comment_author() . "</a>\n" .
+          get_avatar($comment) .
+        "</span>\n" .
         "</div>";
   }
 

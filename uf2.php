@@ -118,7 +118,20 @@ add_filter( 'the_title', 'uf2_the_title', 99, 1 );
  */
 function uf2_the_post( $post ) {
   if (!is_admin()) {
-    return "<div class='e-content'>$post</div>";
+    return "<div class='e-content'>$post</div>" .
+        "<div style='display: none'>\n" .
+        "<a class='u-url' href='" . get_permalink() . "'>" . get_the_title() .
+          "</a>\n" .
+        "<time class='dt-published' datetime='" . get_the_time("c") .
+          "'>" . get_the_time("r") . "</time>\n" .
+        "<time class='dt-updated' datetime='" . get_the_modified_time("c") .
+          "'>" . get_the_modified_time("r") . "</time>\n".
+        "<span class='h-card p-author'>\n" .
+          "<a class='p-name u-url' href='" . get_the_author_meta("user_url")
+            . "'>" . get_the_author() . "</a>\n" .
+          get_avatar(get_the_author_meta("ID")) .
+        "</span>\n" .
+        "</div>";
   }
 
   return $post;
@@ -130,7 +143,18 @@ add_filter( 'the_content', 'uf2_the_post', 99, 1 );
  */
 function uf2_comment_text( $comment ) {
   if (!is_admin()) {
-    return "<div class='e-content p-name p-summary'>$comment</div>";
+    return "<div class='e-content'>$comment</div>\n" .
+        "<div style='display: none'>\n" .
+        "<a class='u-url p-name p-summary' href='" . get_comment_link() . "'>" .
+          get_comment_excerpt() . "</a>\n" .
+        "<time class='dt-published' datetime='" . get_comment_time("c") . "'>" .
+          get_comment_time("r") . "</time>\n" .
+        "<span class='h-card p-author'>\n" .
+          "<a class='p-name u-url' href='" . get_comment_author_url()
+            . "'>" . get_comment_author() . "</a>\n" .
+          get_avatar($comment) .
+        "</span>\n" .
+        "</div>";
   }
 
   return $comment;
@@ -148,15 +172,3 @@ function uf2_the_excerpt( $post ) {
   return $post;
 }
 add_filter( 'the_excerpt', 'uf2_the_excerpt', 99, 1 );
-
-/**
- * Adds microformats v2 support to the author.
- */
-function uf2_the_author( $author ) {
-  if (!is_admin()) {
-    return "<span class='p-author h-card'>$author</span>";
-  }
-
-  return $author;
-}
-add_filter( 'the_author', 'uf2_the_author', 99, 1 );

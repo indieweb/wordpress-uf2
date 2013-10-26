@@ -126,6 +126,11 @@ function uf2_the_post( $post ) {
           "'>" . get_the_time("r") . "</time>\n" .
         "<time class='dt-updated' datetime='" . get_the_modified_time("c") .
           "'>" . get_the_modified_time("r") . "</time>\n".
+        "<span class='h-card p-author'>\n" .
+          "<a class='p-name u-url' href='" . get_the_author_meta("user_url")
+            . "'>" . get_the_author() . "</a>\n" .
+          get_avatar(get_the_author_meta("ID")) .
+        "</span>\n" .
         "</div>";
   }
 
@@ -162,15 +167,3 @@ function uf2_the_excerpt( $post ) {
   return $post;
 }
 add_filter( 'the_excerpt', 'uf2_the_excerpt', 99, 1 );
-
-/**
- * Adds microformats v2 support to the author.
- */
-function uf2_the_author( $author ) {
-  if (!is_admin()) {
-    return "<span class='p-author h-card'>$author</span>";
-  }
-
-  return $author;
-}
-add_filter( 'the_author', 'uf2_the_author', 99, 1 );

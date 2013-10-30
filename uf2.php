@@ -14,6 +14,8 @@
 function uf2_post_classes( $classes ) {
   if (!is_singular()) {
     return uf2_post_classes_helper($classes);
+  } else {
+    $classes = array_diff($classes, array('hentry'));
   }
 
   return $classes;
@@ -47,7 +49,9 @@ add_filter( 'comment_class', 'uf2_comment_classes' );
 
 function uf2_post_classes_helper($classes) {
   // Adds a class for microformats v2
+  $classes = array_diff($classes, array('hentry'));
   $classes[] = 'h-entry';
+  $classes[] = 'hentry';
 
   // adds microformats 2 activity-stream support
   // for pages and articles

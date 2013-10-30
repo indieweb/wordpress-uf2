@@ -12,11 +12,7 @@
  * Adds custom classes to the array of post classes.
  */
 function uf2_post_classes( $classes ) {
-  if (!is_singular()) {
-    return uf2_post_classes_helper($classes);
-  }
-
-  return $classes;
+  return uf2_post_classes_helper($classes);
 }
 add_filter( 'post_class', 'uf2_post_classes' );
 
@@ -26,10 +22,7 @@ add_filter( 'post_class', 'uf2_post_classes' );
 function uf2_body_classes( $classes ) {
   if (!is_singular()) {
     $classes[] = "h-feed";
-  } else {
-    $classes = uf2_post_classes_helper($classes);
   }
-
   return $classes;
 }
 add_filter( 'body_class', 'uf2_body_classes' );

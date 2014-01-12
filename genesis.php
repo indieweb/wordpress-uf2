@@ -28,6 +28,7 @@ function uf2_genesis_init() {
     remove_filter( 'comment_class', 'uf2_comment_classes' );
 
     add_filter( 'genesis_attr_comment', 'uf2_genesis_attr_comment', 20 );
+    add_filter( 'genesis_attr_comment-author', 'uf2_genesis_attr_comment_author', 20 );
 
     // additional hooks
     add_filter( 'genesis_attr_site-title', 'uf2_genesis_attr_site_title' );
@@ -107,6 +108,14 @@ function uf2_genesis_attr_entry_author_name( $attr ) {
  */
 function uf2_genesis_attr_comment( $attr ) {
   $attr['class'] .= ( $attr['class'] ? ' ' : '' ) . 'p-comment h-entry';
+  return $attr;
+}
+
+/**
+ * Adds microformats v2 support to the comment author.
+ */
+function uf2_genesis_attr_comment_author( $attr ) {
+  $attr['class'] .= ( $attr['class'] ? ' ' : '' ) . 'p-author h-card';
   return $attr;
 }
 

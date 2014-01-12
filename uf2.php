@@ -8,6 +8,8 @@
  Version: 1.0.0-dev
 */
 
+include_once dirname(__FILE__) . '/genesis.php';
+
 /**
  * Adds custom classes to the array of post classes.
  */

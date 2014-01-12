@@ -28,7 +28,17 @@ function uf2_genesis_init() {
     remove_filter( 'comment_class', 'uf2_comment_classes' );
 
     add_filter( 'genesis_attr_comment', 'uf2_genesis_attr_comment', 20 );
+
+    // additional hooks
+    add_filter( 'genesis_attr_site-title', 'uf2_genesis_attr_site_title' );
   }
+}
+
+function uf2_genesis_attr_site_title($attr) {
+  if (!is_singular()) {
+    $attr['class'] .= ( $attr['class'] ? ' ' : '' ) . 'p-name';
+  }
+  return $attr;
 }
 
 function uf2_genesis_entry_permalink() {

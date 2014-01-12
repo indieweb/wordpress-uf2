@@ -34,6 +34,9 @@ function uf2_genesis_init() {
   }
 }
 
+/**
+ * Markup site title as p-name on archive pages.
+ */
 function uf2_genesis_attr_site_title($attr) {
   if (!is_singular()) {
     $attr['class'] .= ( $attr['class'] ? ' ' : '' ) . 'p-name';
@@ -41,6 +44,12 @@ function uf2_genesis_attr_site_title($attr) {
   return $attr;
 }
 
+/**
+ * Add entry permalink with microformats 2 support.  This is a little ugly
+ * because we're adding a non-visible anchor tag with no text, but
+ * unfortunately is necessary since Genesis doesn't consistently include a
+ * permalink on individual posts.
+ */
 function uf2_genesis_entry_permalink() {
   echo '<a class="u-url" href="' . get_permalink() .'"></a>';
 }
@@ -54,35 +63,47 @@ function uf2_genesis_attr_entry_title( $attr ) {
 }
 
 /**
- * Adds microformats v2 support to the post.
+ * Adds microformats v2 support to the post content.
  */
 function uf2_genesis_attr_entry_content( $attr ) {
   $attr['class'] .= ( $attr['class'] ? ' ' : '' ) . 'e-content';
   return $attr;
 }
 
+/**
+ * Adds microformats v2 support to the post date.
+ */
 function uf2_genesis_attr_entry_time( $attr ) {
   $attr['class'] .= ( $attr['class'] ? ' ' : '' ) . 'dt-published';
   return $attr;
 }
 
+/**
+ * Adds microformats v2 support to the post author.
+ */
 function uf2_genesis_attr_entry_author( $attr ) {
   $attr['class'] .= ( $attr['class'] ? ' ' : '' ) . 'p-author h-card';
   return $attr;
 }
 
+/**
+ * Adds microformats v2 support to the post author link.
+ */
 function uf2_genesis_attr_entry_author_link( $attr ) {
   $attr['class'] .= ( $attr['class'] ? ' ' : '' ) . 'u-url';
   return $attr;
 }
 
+/**
+ * Adds microformats v2 support to the post author name.
+ */
 function uf2_genesis_attr_entry_author_name( $attr ) {
   $attr['class'] .= ( $attr['class'] ? ' ' : '' ) . 'p-name';
   return $attr;
 }
 
 /**
- * Adds custom classes to the array of comment classes.
+ * Adds microformat 2 classes to the array of comment classes.
  */
 function uf2_genesis_attr_comment( $attr ) {
   $attr['class'] .= ( $attr['class'] ? ' ' : '' ) . 'p-comment h-entry';

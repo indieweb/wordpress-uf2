@@ -7,32 +7,30 @@
 
 add_action( 'init', 'uf2_genesis_init' );
 function uf2_genesis_init() {
-  if ( function_exists( 'genesis_html5' ) && genesis_html5() ) {
-    // replace some post hooks
-    remove_filter( 'the_title', 'uf2_the_title', 99, 1 );
-    remove_filter( 'the_content', 'uf2_the_post', 99, 1 );
-    remove_filter( 'the_excerpt', 'uf2_the_excerpt', 99, 1 );
-    remove_filter( 'the_author', 'uf2_the_author', 99, 1 );
+  // replace some post hooks
+  remove_filter( 'the_title', 'uf2_the_title', 99, 1 );
+  remove_filter( 'the_content', 'uf2_the_post', 99, 1 );
+  remove_filter( 'the_excerpt', 'uf2_the_excerpt', 99, 1 );
+  remove_filter( 'the_author', 'uf2_the_author', 99, 1 );
 
-    add_filter( 'genesis_entry_header', 'uf2_genesis_entry_permalink' );
-    add_filter( 'genesis_attr_entry-title', 'uf2_genesis_attr_entry_title', 20 );
-    add_filter( 'genesis_attr_entry-content', 'uf2_genesis_attr_entry_content', 20 );
-    add_filter( 'genesis_attr_entry-time', 'uf2_genesis_attr_entry_time', 20 );
-    add_filter( 'genesis_attr_entry-author', 'uf2_genesis_attr_entry_author', 20 );
-    add_filter( 'genesis_attr_entry-author-link', 'uf2_genesis_attr_entry_author_link', 20 );
-    add_filter( 'genesis_attr_entry-author-name', 'uf2_genesis_attr_entry_author_name', 20 );
+  add_filter( 'genesis_entry_header', 'uf2_genesis_entry_permalink' );
+  add_filter( 'genesis_attr_entry-title', 'uf2_genesis_attr_entry_title', 20 );
+  add_filter( 'genesis_attr_entry-content', 'uf2_genesis_attr_entry_content', 20 );
+  add_filter( 'genesis_attr_entry-time', 'uf2_genesis_attr_entry_time', 20 );
+  add_filter( 'genesis_attr_entry-author', 'uf2_genesis_attr_entry_author', 20 );
+  add_filter( 'genesis_attr_entry-author-link', 'uf2_genesis_attr_entry_author_link', 20 );
+  add_filter( 'genesis_attr_entry-author-name', 'uf2_genesis_attr_entry_author_name', 20 );
 
-    // replace some comment hooks
-    remove_filter( 'comment_text', 'uf2_comment_text', 99, 1 );
-    remove_filter( 'get_comment_author_link', 'uf2_author_link' );
-    remove_filter( 'comment_class', 'uf2_comment_classes' );
+  // replace some comment hooks
+  remove_filter( 'comment_text', 'uf2_comment_text', 99, 1 );
+  remove_filter( 'get_comment_author_link', 'uf2_author_link' );
+  remove_filter( 'comment_class', 'uf2_comment_classes' );
 
-    add_filter( 'genesis_attr_comment', 'uf2_genesis_attr_comment', 20 );
-    add_filter( 'genesis_attr_comment-author', 'uf2_genesis_attr_comment_author', 20 );
+  add_filter( 'genesis_attr_comment', 'uf2_genesis_attr_comment', 20 );
+  add_filter( 'genesis_attr_comment-author', 'uf2_genesis_attr_comment_author', 20 );
 
-    // additional hooks
-    add_filter( 'genesis_attr_site-title', 'uf2_genesis_attr_site_title' );
-  }
+  // additional hooks
+  add_filter( 'genesis_attr_site-title', 'uf2_genesis_attr_site_title' );
 }
 
 /**

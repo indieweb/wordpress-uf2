@@ -8,7 +8,8 @@
  Version: 1.0.0-dev
 */
 
-if ( function_exists( 'genesis_html5' ) && genesis_html5() ) {
+add_action( 'init', 'uf2_genesis_init' );
+function uf2_genesis_init() {
   include_once dirname(__FILE__) . '/genesis.php';
 }
 

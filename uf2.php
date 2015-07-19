@@ -61,7 +61,7 @@ class Uf2Plugin {
 		if ( ! is_singular() ) {
 			$classes[] = 'h-feed';
 		} else {
-			$classes = post_classes_helper( $classes );
+			$classes = self::post_classes_helper( $classes );
 		}
 
 		return $classes;

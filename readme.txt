@@ -1,4 +1,4 @@
-=== WordPress UF2 ===
+=== Microformats2 ===
 Contributors: pfefferle, dshanske
 Tags: microformats, indieweb
 Requires at least: 4.7

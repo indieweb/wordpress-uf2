@@ -31,9 +31,9 @@ class Uf2Plugin {
 		add_filter( 'get_comment_author_link', array( 'Uf2Plugin', 'author_link' ) );
 		add_filter( 'get_avatar', array( 'Uf2Plugin', 'get_avatar' ) );
 		add_filter( 'the_title', array( 'Uf2Plugin', 'the_title' ), 99, 1 );
-		add_filter( 'the_content', array( 'Uf2Plugin', 'the_post' ), 99, 1 );
+		add_filter( 'the_content', array( 'Uf2Plugin', 'the_post' ), -1, 1 );
 		add_filter( 'comment_text', array( 'Uf2Plugin', 'comment_text' ), 99, 1 );
-		add_filter( 'the_excerpt', array( 'Uf2Plugin', 'the_excerpt' ), 99, 1 );
+		add_filter( 'the_excerpt', array( 'Uf2Plugin', 'the_excerpt' ), -1, 1 );
 		add_filter( 'the_author', array( 'Uf2Plugin', 'the_author' ), 99, 1 );
 
 		if ( function_exists( 'genesis_html5' ) && genesis_html5() ) {

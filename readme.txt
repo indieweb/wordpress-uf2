@@ -1,4 +1,4 @@
-=== Semantic-Linkbacks ===
+=== WordPress UF2 ===
 Contributors: pfefferle, dshanske
 Tags: microformats, indieweb
 Requires at least: 4.7

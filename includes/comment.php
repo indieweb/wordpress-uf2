@@ -26,8 +26,8 @@ class UF2_Comment {
 	 * Adds custom classes to the array of comment classes.
 	 */
 	public static function comment_classes( $classes ) {
-		$classes[] = 'p-comment';
-		$classes[] = 'h-entry';
+		$classes[] = 'u-comment';
+		$classes[] = 'h-cite';
 
 		return $classes;
 	}

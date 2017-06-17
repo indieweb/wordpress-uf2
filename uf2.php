@@ -1,11 +1,11 @@
 <?php
 /*
- Plugin Name: uf2
+ Plugin Name: Microformats 2
  Plugin URI: https://github.com/pfefferle/wordpress-uf2
- Description: Adds microformats2 support to your WordPress theme
+ Description: Adds microformats2 support to your WordPress installation or theme
  Author: pfefferle
  Author URI: http://notizblog.org/
- Version: 1.0.0-dev
+ Version: 1.0.0
 */
 
 add_action( 'init', array( 'Uf2Plugin', 'init' ) );

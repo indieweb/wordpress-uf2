@@ -15,18 +15,30 @@ class UF2_Post {
 		// The priority ensures that the content and not anything added dynamically by another plugin.
 		add_filter( 'the_content', array( $this, 'the_post' ), -1, 1 );
 		add_filter( 'the_excerpt', array( $this, 'the_excerpt' ), -1, 1 );
+
+		add_filter( 'date_i18n', array( $this, 'fix_c_time_format' ), 10, 3 );
+	}
+	
+	function fix_c_time_format( $date, $format, $timestamp ) {
+	    if ( 'c' == $format )
+		            $date = date_i18n( DATE_W3C, $timestamp );
+
+	        return $date;
 	}
 
 	/**
 	 * Adds custom classes to the array of post classes.
 	 */
 	public static function post_classes( $classes ) {
+		$classes = array_diff( $classes, array( 'hentry' ) );
 		if ( ! is_singular() ) {
-			return self::post_classes_helper( $classes );
-		} else {
-			$classes = array_diff( $classes, array( 'hentry' ) );
+			if ( 'page' !== get_post_type() ) {
+				// Adds a class for microformats v2
+				$classes[] = 'h-entry';
+				// add hentry to the same tag as h-entry
+				$classes[] = 'hentry';
+			}
 		}
-
 		return $classes;
 	}
 
@@ -34,13 +46,17 @@ class UF2_Post {
 	 * Adds custom classes to the array of body classes.
 	 */
 	public static function body_classes( $classes ) {
+		// Adds a class of hfeed to non-singular pages.
 		if ( ! is_singular() ) {
+			$classes[] = 'hfeed';
 			$classes[] = 'h-feed';
 		} else {
-			$classes = self::post_classes_helper( $classes );
+			if ( 'page' !== get_post_type() ) {
+				$classes[] = 'hentry';
+				$classes[] = 'h-entry';
+			}
 		}
-
-		return $classes;
+		return array_unique( $classes );
 	}
 
 	/**
@@ -74,14 +90,5 @@ class UF2_Post {
 		}
 
 		return $post;
-	}
-
-	public static function post_classes_helper( $classes ) {
-		// Adds a class for microformats v2
-		$classes = array_diff( $classes, array( 'hentry' ) );
-		$classes[] = 'h-entry';
-		$classes[] = 'hentry';
-
-		return $classes;
 	}
 }

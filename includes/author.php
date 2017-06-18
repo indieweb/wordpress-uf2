@@ -24,7 +24,7 @@ class UF2_Author {
 	/**
 	 * Adds microformats v2 support to the get_avatar_data() method.
 	 */
-	public static function get_avatar_data( $id_or_email, $args ) {
+	public static function get_avatar_data( $args, $id_or_email ) {
 		// Adds a class for microformats v2
 		if ( ! isset( $args['class'] ) ) {
 			$args['class'] = array();

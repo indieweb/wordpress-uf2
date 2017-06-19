@@ -1,22 +1,22 @@
 <?php
 /*
  Plugin Name: Microformats 2
- Plugin URI: https://github.com/pfefferle/wordpress-uf2
+ Plugin URI: https://github.com/indieweb/wordpress-microformats2
  Description: Adds microformats2 support to your WordPress installation or theme
  Author: pfefferle
  Author URI: http://notizblog.org/
  Version: 1.0.0
- Text Domain: uf2
+ Text Domain: microformats2
 */
 
-add_action( 'plugins_loaded', array( 'UF2_Plugin', 'init' ) );
+add_action( 'plugins_loaded', array( 'MF2_Plugin', 'init' ) );
 
 /**
  * Adds microformats2 support to your WordPress theme
  *
  * @author Matthias Pfefferle
  */
-class UF2_Plugin {
+class MF2_Plugin {
 	/**
 	 * Initialize plugin
 	 */
@@ -26,17 +26,17 @@ class UF2_Plugin {
 			return;
 		}
 		self::plugin_textdomain();
-		require_once dirname( __FILE__ ) . '/includes/author.php';
-		$uf2author = new UF2_Author();
+		require_once dirname( __FILE__ ) . '/includes/class-mf2-author.php';
+		$MF2author = new MF2_Author();
 
-		require_once dirname( __FILE__ ) . '/includes/comment.php';
-		$uf2comment = new UF2_Comment();
+		require_once dirname( __FILE__ ) . '/includes/class-mf2-comment.php';
+		$MF2comment = new MF2_Comment();
 
-		require_once dirname( __FILE__ ) . '/includes/media.php';
-		$uf2media = new UF2_Media();
+		require_once dirname( __FILE__ ) . '/includes/class-mf2-media.php';
+		$MF2media = new MF2_Media();
 
-		require_once dirname( __FILE__ ) . '/includes/post.php';
-		$uf2post = new UF2_Post();
+		require_once dirname( __FILE__ ) . '/includes/class-mf2-post.php';
+		$MF2post = new MF2_Post();
 
 		if ( function_exists( 'genesis_html5' ) && genesis_html5() ) {
 			require_once dirname( __FILE__ ) . '/includes/genesis.php';
@@ -48,7 +48,7 @@ class UF2_Plugin {
 	  */
 	public static function plugin_textdomain() {
 		// Note to self, the third argument must not be hardcoded, to account for relocated folders.
-		load_plugin_textdomain( 'uf2', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+		load_plugin_textdomain( 'microformats2', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 	}
 
 }

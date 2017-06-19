@@ -17,7 +17,7 @@ It is only a very basic implementation, because not every element is accessible 
 
 ## Changelog ##
 
-Project actively developed on Github at [pfefferle/wordpress-uf2](https://github.com/pfefferle/wordpress-uf2). Please file support issues there.
+Project actively developed on Github at [indieweb/wordpress-microformats2](https://github.com/indieweb/wordpress-microformats2). Please file support issues there.
 
 ### 1.0.0 ###
 * Initial Stable Release

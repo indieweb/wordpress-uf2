@@ -4,7 +4,7 @@
  * Adds microformats2 support to media and post formats
  *
  */
-class UF2_Media {
+class MF2_Media {
 	/**
 	 * Initialize plugin
 	 */

@@ -1,5 +1,5 @@
 {
-  "name": "wordpress-uf2",
+  "name": "wordpress-microformats-2",
   "description": "Microformats 2 for WordPress!",
   "dependencies": {
     "grunt": "^0.4.5"
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/pfefferle/wordpress-uf2.git"
+    "url": "https://github.com/indieweb/wordpress-microformats-2.git"
   },
   "keywords": [
     "wordpress",
@@ -23,7 +23,7 @@
   "author": "Matthias Pfefferle",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/pfefferle/wordpress-uf2/issues"
+    "url": "https://github.com/indieweb/wordpress-microformats-2/issues"
   },
-  "homepage": "https://github.com/pfefferle/wordpress-uf2"
+  "homepage": "https://github.com/indieweb/wordpress-microformats-2"
 }

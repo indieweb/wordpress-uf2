@@ -4,7 +4,7 @@
  * Enhances Author and Avatar Markup
  *
  */
-class UF2_Author {
+class MF2_Author {
 	/**
 	 * Initialize plugin
 	 */

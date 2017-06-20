@@ -3,7 +3,7 @@
  * Adds microformats2 support to your comments
  *
  */
-class UF2_Comment {
+class MF2_Comment {
 	/**
 	 * Initialize plugin
 	 */
@@ -16,10 +16,6 @@ class UF2_Comment {
 		add_filter( 'comment_class', array( $this, 'comment_classes' ) );
 		add_filter( 'get_comment_author_link', array( $this, 'author_link' ) );
 		add_filter( 'comment_text', array( $this, 'comment_text' ), 99, 1 );
-
-		if ( function_exists( 'genesis_html5' ) && genesis_html5() ) {
-			include_once dirname( __FILE__ ) . '/genesis.php';
-		}
 	}
 
 	/**

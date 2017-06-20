@@ -1,7 +1,7 @@
 <?php
 /*
  Plugin Name: Microformats 2
- Plugin URI: https://github.com/indieweb/wordpress-microformats2
+ Plugin URI: https://github.com/indieweb/wordpress-microformats-2
  Description: Adds microformats2 support to your WordPress installation or theme
  Author: pfefferle
  Author URI: http://notizblog.org/
@@ -48,7 +48,7 @@ class MF2_Plugin {
 	  */
 	public static function plugin_textdomain() {
 		// Note to self, the third argument must not be hardcoded, to account for relocated folders.
-		load_plugin_textdomain( 'microformats2', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+		load_plugin_textdomain( 'microformats-2', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 	}
 
 }

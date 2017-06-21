@@ -4,7 +4,7 @@
  * Enhances Author and Avatar Markup
  *
  */
-class MF2_Author {
+class UF2_Author {
 	/**
 	 * Initialize plugin
 	 */
@@ -34,7 +34,7 @@ class MF2_Author {
 			$args['class'] = explode( ' ', $args['class'] );
 			$args['class'][] = 'u-photo';
 		}
-		else { 
+		else {
 			$args['class'][] = 'u-photo';
 		}
 		return $args;

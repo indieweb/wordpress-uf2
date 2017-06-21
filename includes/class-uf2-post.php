@@ -4,7 +4,7 @@
  * Adds microformats2 support to your posts
  *
  */
-class MF2_Post {
+class UF2_Post {
 	/**
 	 * Initialize plugin
 	 */

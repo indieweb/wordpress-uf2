@@ -1,10 +1,10 @@
-# Copyright (C) 2017 pfefferle
-# This file is distributed under the same license as the Microformats 2 package.
+# Copyright (C) 2017 IndieWeb WordPress Outreach Club
+# This file is distributed under the same license as the wp-uf2 package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Microformats 2 1.0.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/microformats2\n"
-"POT-Creation-Date: 2017-06-19 11:58:15+00:00\n"
+"Project-Id-Version: wp-uf2 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-uf2\n"
+"POT-Creation-Date: 2017-06-21 07:04:17+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,11 +14,11 @@ msgstr ""
 "X-Generator: grunt-wp-i18n 0.5.4\n"
 
 #. Plugin Name of the plugin/theme
-msgid "Microformats 2"
+msgid "wp-uf2"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
-msgid "https://github.com/indieweb/wordpress-microformats2"
+msgid "https://github.com/indieweb/wordpress-uf2"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -26,9 +26,9 @@ msgid "Adds microformats2 support to your WordPress installation or theme"
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "pfefferle"
+msgid "IndieWeb WordPress Outreach Club"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "http://notizblog.org/"
+msgid "https://indieweb.org/WordPress_Outreach_Club"
 msgstr ""

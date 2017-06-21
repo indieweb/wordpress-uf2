@@ -16,9 +16,9 @@ services:
     links:
       - db
     ports:
-      - "80:80"
+      - "8080:80"
     volumes:
-            - .:/var/www/html/wp-content/plugins/microformats-2
+      - .:/var/www/html/wp-content/plugins/wp-uf2
     restart: always
     environment:
       WORDPRESS_DB_HOST: db:3306

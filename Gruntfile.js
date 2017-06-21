@@ -11,8 +11,8 @@ module.exports = function(grunt) {
     makepot: {
       target: {
         options: {
-          mainFile: 'microformats-2.php',
-          potFilename: 'languages/microformats-2.pot',
+          mainFile: 'wp-uf2.php',
+          potFilename: 'languages/wp-uf2.pot',
           type: 'wp-plugin',
           updateTimestamp: true
         }

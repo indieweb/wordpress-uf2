@@ -3,7 +3,7 @@
  * Adds microformats2 support to your comments
  *
  */
-class MF2_Comment {
+class UF2_Comment {
 	/**
 	 * Initialize plugin
 	 */

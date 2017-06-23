@@ -1,0 +1,28 @@
+sudo: false
+
+language: php
+
+notifications:
+  on_success: never
+  on_failure: change
+
+php:
+    - 5.6
+    - 7.0
+
+after_success: curl -L https://raw.githubusercontent.com/miya0001/travis2wpplugin/master/deploy.sh | bash
+
+env:
+  matrix:
+    - WP_VERSION=latest WP_MULTISITE=0
+    - WP_VERSION=nightly WP_MULTISITE=0
+
+  global:
+    - SVN_REPO: https://plugins.svn.wordpress.org/wp-uf2/
+    - GH_REF: https://github.com/indieweb/wordpress-uf2.git
+    - secure: "nTYhIMiHc40XkguRBwfqhrneIDZVlk9ObKgGFVpaAJnaBV9iRlzGoIFAqgl/fF2NbZviM2Pq1Y87WTnctWQXA4n2acO6+n3HeCGERdYtr5SeuSi92OZjmQpH+v+++IKgCaSw/bsEGIVB4IZbSZo2lTWqkllkXHvBgyz3ib8XU1/2TR8wi1tLO6NjrocuIR3tJOzTBLmcgPaY0/0GUJNDjcMTQCtU3jxG7hAdv5vUZ3FeosEY2T+nNJj5WxaBPu68AFM7JKRu35eR6MgltkFh+t231kd4E/buAAss+aAHLp+8gQcSEvk5La70mnN5cjLIRdiCo4G0yq/5ZqfPijtLfcxyfTiqD8x/oLmKvkV1PezE4dq0sVAMi4feSggjiY7dITc1HGZYesRxgz+8luhZ3DCgD8MDRXVQjmJirbf1lJkV1QsZyeZj4NyOMxV7iJIW0rGQ1nL2f8gda+9iaOovCoF8xBkBjvGdus3D4tJgJRxPMdxzNDcyRbxgIDcw0W+ugQjIBtkZjVQkTTuc/a/1a9cDoFfayug58kpJLz1+GH7C44tfGrzHs/MAmaG9KBKEqaZMs8fcfsT7yPgyV7+M1s8xTFVw+S5yEjYyg25gOz4tv6ELtzs6w+UZyr4v0OUcIlzX87uS17uV50mKzejd5XLSjyWXiJwr+krte8paWFA="
+
+matrix:
+  include:
+    - php: 5.6
+      env: WP_VERSION=latest WP_MULTISITE=0 WP_PULUGIN_DEPLOY=1

@@ -9,7 +9,7 @@ Enhances your WordPress theme with Microformats 2 classes.
 
 ## Description ##
 
-It is only a very basic implementation, because not every element is accessible through actions or filters. It is better to use a theme that supports [microformats2] fully.
+It is only a very basic implementation, because not every element is accessible through actions or filters. It is better to use a theme that supports [Microformats 2](http://microformats.org/wiki/microformats2) fully.
 
 ## Frequently Asked Questions ##
 

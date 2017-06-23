@@ -3,13 +3,13 @@ Contributors: pfefferle, dshanske
 Tags: microformats, indieweb
 Requires at least: 4.7
 Tested up to: 4.8
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 
 Enhances your WordPress theme with Microformats 2 classes.
 
 == Description ==
 
-It is only a very basic implementation, because not every element is accessible through actions or filters. It is better to use a theme that supports [microformats2] fully.
+It is only a very basic implementation, because not every element is accessible through actions or filters. It is better to use a theme that supports [Microformats 2](http://microformats.org/wiki/microformats2) fully.
 
 == Frequently Asked Questions ==
 
@@ -28,7 +28,12 @@ Microformats 2 classes. Most commonly, the classic Microformats class hentry.
 
 == Changelog ==
 
-Project actively developed on Github at [indieweb/wordpress-wp-uf2](https://github.com/indieweb/wordpress-wp-uf2). Please file support issues there.
+Project actively developed on Github at [indieweb/wordpress-uf2](https://github.com/indieweb/wordpress-uf2). Please file support issues there.
+
+= 1.0.1 =
+
+* WP.org version
 
 = 1.0.0 =
+
 * Initial Stable Release

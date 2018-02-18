@@ -5,7 +5,7 @@
  * Description: Adds Microformats 2 support to your WordPress installation or theme
  * Author: IndieWeb WordPress Outreach Club
  * Author URI: https://indieweb.org/WordPress_Outreach_Club
- * Version: 1.0.1
+ * Version: 1.1.0
  * Text Domain: wp-uf2
  */
 

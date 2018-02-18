@@ -9,7 +9,7 @@
  * Text Domain: wp-uf2
  */
 
-add_action( 'plugins_loaded', array( 'UF2_Plugin', 'init' ) );
+add_action( 'after_setup_theme', array( 'UF2_Plugin', 'init' ), 99 );
 
 /**
  * Adds Microformats 2 support to your WordPress theme

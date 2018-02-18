@@ -14,6 +14,9 @@ class UF2_Media {
 
 	public static function wp_get_attachment_image_attributes( array $attr, WP_Post $attachment ) {
 		$parents = get_post_ancestors( $attachment );
+		if ( 0 == count( $parents ) ) { // For unattached images
+			return $attr;
+		}
 		$id = $parents[ count( $parents ) -1 ];
 		if ( 'image' !== get_post_format( $id ) ) {
 			return $attr;

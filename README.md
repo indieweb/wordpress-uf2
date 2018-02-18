@@ -1,9 +1,9 @@
 # Microformats 2 #
-**Contributors:** pfefferle, dshanske  
+**Contributors:** pfefferle, dshanske, indieweb  
 **Tags:** microformats, indieweb  
 **Requires at least:** 4.7  
-**Tested up to:** 4.8  
-**Stable tag:** 1.0.1  
+**Tested up to:** 4.9.4  
+**Stable tag:** 1.1.0  
 
 Enhances your WordPress theme with Microformats 2 classes.
 
@@ -29,6 +29,11 @@ Microformats 2 classes. Most commonly, the classic Microformats class hentry.
 ## Changelog ##
 
 Project actively developed on Github at [indieweb/wordpress-uf2](https://github.com/indieweb/wordpress-uf2). Please file support issues there.
+
+### 1.1.0 ###
+
+* Better handling for unattached images (props @kraftbj)
+* Fixed proper `current_theme_supports` handling
 
 ### 1.0.1 ###
 

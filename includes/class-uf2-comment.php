@@ -14,7 +14,7 @@ class UF2_Comment {
 		}
 
 		add_filter( 'comment_class', array( $this, 'comment_classes' ) );
-		add_filter( 'get_comment_author_link', array( $this, 'author_link' ) );
+		add_filter( 'get_comment_author_link', array( $this, 'get_comment_author_link' ), 10, 2 );
 		add_filter( 'comment_text', array( $this, 'comment_text' ), 99, 1 );
 	}
 
@@ -42,10 +42,17 @@ class UF2_Comment {
         /**
          * Adds microformats v2 support to the comment_author_link.
          */
-        public static function author_link( $link ) {
+        public static function get_comment_author_link( $return, $author, $comment_ID ) {
+		$comment = get_comment( $comment_ID );
+		$url     = get_comment_author_url( $comment );
                 // Adds a class for microformats v2
-                return preg_replace( '/(class\s*=\s*[\"|\'])/i', '${1}u-url ', $link );
-        }
+		if ( empty( $url ) || 'http://' === $url ) {
+        		return = $author;
+		} else {
+        		return "<a href='$url' rel='external nofollow' class='url u-url'>$author</a>";
+		}
+        	return $return;
+	}
 
 
 }

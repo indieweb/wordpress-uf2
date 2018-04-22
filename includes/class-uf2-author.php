@@ -14,14 +14,6 @@ class UF2_Author {
 	}
 
 	/**
-	 * Adds microformats v2 support to the comment_author_link.
-	 */
-	public static function author_link( $link ) {
-		// Adds a class for microformats v2
-		return preg_replace( '/(class\s*=\s*[\"|\'])/i', '${1}u-url ', $link );
-	}
-
-	/**
 	 * Adds microformats v2 support to the get_avatar_data() method.
 	 */
 	public static function get_avatar_data( $args, $id_or_email ) {

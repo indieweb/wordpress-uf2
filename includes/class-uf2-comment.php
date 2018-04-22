@@ -25,7 +25,7 @@ class UF2_Comment {
 		$classes[] = 'u-comment';
 		$classes[] = 'h-cite';
 
-		return $classes;
+		return array_unique( $classes );
 	}
 
 	/**

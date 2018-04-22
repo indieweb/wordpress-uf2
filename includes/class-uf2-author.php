@@ -37,6 +37,7 @@ class UF2_Author {
 		else {
 			$args['class'][] = 'u-photo';
 		}
+		$args['class'] = array_unique( $args['class'] );
 		return $args;
 	}
 

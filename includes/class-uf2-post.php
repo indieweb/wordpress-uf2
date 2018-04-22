@@ -39,7 +39,7 @@ class UF2_Post {
 				$classes[] = 'hentry';
 			}
 		}
-		return $classes;
+		return array_unique( $classes );
 	}
 
 	/**

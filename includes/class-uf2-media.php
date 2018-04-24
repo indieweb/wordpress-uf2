@@ -13,9 +13,9 @@ class UF2_Media {
 		add_filter( 'get_avatar_data', array( $this, 'get_avatar_data' ), 10, 2 );
 	}
 
-		/**
-		 * Adds microformats v2 support to the get_avatar_data() method.
-		 */
+	/**
+	 * Adds microformats v2 support to the get_avatar_data() method.
+	 */
 	public static function get_avatar_data( $args, $id_or_email ) {
 			// Adds a class for microformats v2
 		if ( ! isset( $args['class'] ) ) {

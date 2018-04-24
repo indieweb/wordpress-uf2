@@ -21,10 +21,9 @@ class UF2_Post {
 
 	function fix_c_time_format( $date, $format, $timestamp ) {
 		if ( 'c' == $format ) {
-					$date = date_i18n( DATE_W3C, $timestamp );
+			$date = date_i18n( DATE_W3C, $timestamp );
 		}
-
-			return $date;
+		return $date;
 	}
 
 	/**

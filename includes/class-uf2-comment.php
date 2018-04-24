@@ -45,11 +45,12 @@ class UF2_Comment {
 	public static function get_comment_author_link( $return, $author, $comment_ID ) {
 		$comment = get_comment( $comment_ID );
 		$url     = get_comment_author_url( $comment );
-			// Adds a class for microformats v2
+
+		// Adds a class for microformats v2
 		if ( empty( $url ) || 'http://' === $url ) {
-				return $author;
+			return $author;
 		} else {
-				return "<a href='$url' rel='external nofollow' class='url u-url'>$author</a>";
+			return "<a href='$url' rel='external nofollow' class='url u-url'>$author</a>";
 		}
 		return $return;
 	}

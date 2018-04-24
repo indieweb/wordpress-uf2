@@ -5,7 +5,7 @@
  * Description: Adds Microformats 2 support to your WordPress installation or theme
  * Author: IndieWeb WordPress Outreach Club
  * Author URI: https://indieweb.org/WordPress_Outreach_Club
- * Version: 1.1.0
+ * Version: 1.2.0
  * Text Domain: wp-uf2
  */
 
@@ -21,19 +21,27 @@ class UF2_Plugin {
 	 * Initialize plugin
 	 */
 	public static function init() {
+		self::plugin_textdomain();
+		require_once dirname( __FILE__ ) . '/includes/class-uf2-settings.php';
+		new UF2_Settings();
+
 		// check if theme already supports Microformats 2
 		if ( current_theme_supports( 'microformats2' ) ) {
 			return;
 		}
-		self::plugin_textdomain();
-		require_once dirname( __FILE__ ) . '/includes/class-uf2-author.php';
-		$author = new UF2_Author();
+
+		if ( 1 === (int) get_option( 'uf2_author' ) ) {
+			require_once dirname( __FILE__ ) . '/includes/class-uf2-author.php';
+			$author = new UF2_Author();
+		}
 
 		require_once dirname( __FILE__ ) . '/includes/class-uf2-comment.php';
 		$comment = new UF2_Comment();
 
-		require_once dirname( __FILE__ ) . '/includes/class-uf2-media.php';
-		$media = new UF2_Media();
+		if ( 1 === (int) get_option( 'uf2_media' ) ) {
+			require_once dirname( __FILE__ ) . '/includes/class-uf2-media.php';
+			$media = new UF2_Media();
+		}
 
 		require_once dirname( __FILE__ ) . '/includes/class-uf2-post.php';
 		$post = new UF2_Post();

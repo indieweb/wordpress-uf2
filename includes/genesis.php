@@ -6,13 +6,13 @@
  */
 
 // replace some post and comment hooks
-remove_filter( 'the_title', array( 'Uf2Plugin', 'the_title' ), 99, 1 );
-remove_filter( 'the_content', array( 'Uf2Plugin', 'the_post' ), 99, 1 );
-remove_filter( 'the_excerpt', array( 'Uf2Plugin', 'the_excerpt' ), 99, 1 );
-remove_filter( 'the_author', array( 'Uf2Plugin', 'the_author' ), 99, 1 );
-remove_filter( 'comment_text', array( 'Uf2Plugin', 'comment_text' ), 99, 1 );
-remove_filter( 'get_comment_author_link', array( 'Uf2Plugin', 'author_link' ) );
-remove_filter( 'comment_class', array( 'Uf2Plugin', 'comment_classes' ) );
+remove_filter( 'the_title', array( 'UF2_Author', 'the_title' ), 99, 1 );
+remove_filter( 'the_content', array( 'UF2_Post', 'the_post' ), 99, 1 );
+remove_filter( 'the_excerpt', array( 'UF2_Post', 'the_excerpt' ), 99, 1 );
+remove_filter( 'the_author', array( 'UF2_Author', 'the_author' ), 99, 1 );
+remove_filter( 'comment_text', array( 'UF2_Comment', 'comment_text' ), 99, 1 );
+remove_filter( 'get_comment_author_link', array( 'UF2_Comment', 'author_link' ) );
+remove_filter( 'comment_class', array( 'UF2_Comment', 'comment_classes' ) );
 
 
 /**
@@ -27,13 +27,13 @@ function uf2_genesis_attr_site_title( $attr ) {
 add_filter( 'genesis_attr_site-title', 'uf2_genesis_attr_site_title' );
 
 /**
- * Add entry permalink with microformats 2 support.	This is a little ugly
+ * Add entry permalink with microformats 2 support. This is a little ugly
  * because we're adding a non-visible anchor tag with no text, but
  * unfortunately is necessary since Genesis doesn't consistently include a
  * permalink on individual posts.
  */
 function uf2_genesis_entry_permalink() {
-	echo '<a class="u-url" href="' . get_permalink() .'"></a>';
+	echo '<a class="u-url" href="' . get_permalink() . '"></a>';
 }
 add_filter( 'genesis_entry_header', 'uf2_genesis_entry_permalink' );
 

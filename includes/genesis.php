@@ -27,13 +27,13 @@ function uf2_genesis_attr_site_title( $attr ) {
 add_filter( 'genesis_attr_site-title', 'uf2_genesis_attr_site_title' );
 
 /**
- * Add entry permalink with microformats 2 support.	This is a little ugly
+ * Add entry permalink with microformats 2 support. This is a little ugly
  * because we're adding a non-visible anchor tag with no text, but
  * unfortunately is necessary since Genesis doesn't consistently include a
  * permalink on individual posts.
  */
 function uf2_genesis_entry_permalink() {
-	echo '<a class="u-url" href="' . get_permalink() .'"></a>';
+	echo '<a class="u-url" href="' . get_permalink() . '"></a>';
 }
 add_filter( 'genesis_entry_header', 'uf2_genesis_entry_permalink' );
 

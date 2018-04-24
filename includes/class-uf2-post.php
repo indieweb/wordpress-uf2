@@ -18,12 +18,13 @@ class UF2_Post {
 
 		add_filter( 'date_i18n', array( $this, 'fix_c_time_format' ), 10, 3 );
 	}
-	
-	function fix_c_time_format( $date, $format, $timestamp ) {
-	    if ( 'c' == $format )
-		            $date = date_i18n( DATE_W3C, $timestamp );
 
-	        return $date;
+	function fix_c_time_format( $date, $format, $timestamp ) {
+		if ( 'c' == $format ) {
+					$date = date_i18n( DATE_W3C, $timestamp );
+		}
+
+			return $date;
 	}
 
 	/**
@@ -46,6 +47,8 @@ class UF2_Post {
 	 * Adds custom classes to the array of body classes.
 	 */
 	public static function body_classes( $classes ) {
+		// Remove hfeed just in case it is added to everything
+		$classes = array_diff( $classes, array( 'hfeed' ) );
 		// Adds a class of hfeed to non-singular pages.
 		if ( ! is_singular() ) {
 			$classes[] = 'hfeed';

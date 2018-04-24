@@ -8,8 +8,8 @@ class UF2_Comment {
 	 * Initialize plugin
 	 */
 	public static function construct() {
-		// check if theme already supports Microformats2
-		if ( current_theme_supports( 'microformats2' ) ) {
+		// check if theme already supports Microformats2 or if the Semantic Linkbacks plugin is installed as it duplicates this effort
+		if ( current_theme_supports( 'microformats2' ) || class_exists( 'Semantic_Linkbacks_Plugin' ) ) {
 			return;
 		}
 
@@ -39,19 +39,19 @@ class UF2_Comment {
 		return $comment;
 	}
 
-        /**
-         * Adds microformats v2 support to the comment_author_link.
-         */
-        public static function get_comment_author_link( $return, $author, $comment_ID ) {
+		/**
+		 * Adds microformats v2 support to the comment_author_link.
+		 */
+	public static function get_comment_author_link( $return, $author, $comment_ID ) {
 		$comment = get_comment( $comment_ID );
 		$url     = get_comment_author_url( $comment );
-                // Adds a class for microformats v2
+			// Adds a class for microformats v2
 		if ( empty( $url ) || 'http://' === $url ) {
-        		return = $author;
+				return $author;
 		} else {
-        		return "<a href='$url' rel='external nofollow' class='url u-url'>$author</a>";
+				return "<a href='$url' rel='external nofollow' class='url u-url'>$author</a>";
 		}
-        	return $return;
+		return $return;
 	}
 
 

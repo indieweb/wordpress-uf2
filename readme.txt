@@ -2,8 +2,8 @@
 Contributors: pfefferle, dshanske, indieweb
 Tags: microformats, indieweb
 Requires at least: 4.7
-Tested up to: 4.9.4
-Stable tag: 1.1.0
+Tested up to: 4.9.5
+Stable tag: 1.2.0
 
 Enhances your WordPress theme with Microformats 2 classes.
 
@@ -29,6 +29,12 @@ Microformats 2 classes. Most commonly, the classic Microformats class hentry.
 == Changelog ==
 
 Project actively developed on Github at [indieweb/wordpress-uf2](https://github.com/indieweb/wordpress-uf2). Please file support issues there.
+
+= 1.2.0 =
+
+* Add Settings Page to turn off Author and Media Enhancements
+* Fix Genesis hooks
+* Deactivate comment enhancements if Semantic Linkbacks is enabled as it does the same sort of enhancements but better
 
 = 1.1.0 =
 

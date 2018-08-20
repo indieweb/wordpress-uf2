@@ -76,8 +76,9 @@ class UF2_Post {
 	 * Adds microformats v2 support to the post.
 	 */
 	public static function the_post( $post ) {
+		$url = esc_url( get_permalink() );
 		if ( ! is_admin() ) {
-			return "<div class='e-content'>$post</div>";
+			return "<data class='u-url' value='$url'></data><div class='e-content'>$post</div>";
 		}
 
 		return $post;

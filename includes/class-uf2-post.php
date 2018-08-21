@@ -77,8 +77,9 @@ class UF2_Post {
 	 */
 	public static function the_post( $post ) {
 		$url = esc_url( get_permalink() );
+		$pub = esc_attr( get_the_date( DATE_ATOM ) );
 		if ( ! is_admin() ) {
-			return "<data class='u-url' value='$url'></data><div class='e-content'>$post</div>";
+			return "<data class='u-url' value='$url'></data><time class='dt-published' datetime='$pub'></time><div class='e-content'>$post</div>";
 		}
 
 		return $post;

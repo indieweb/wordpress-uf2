@@ -65,7 +65,8 @@ class UF2_Post {
 	 * Adds microformats v2 support to the post title.
 	 */
 	public static function the_title( $title ) {
-		if ( ! is_admin() && in_the_loop() ) {
+		global $post;
+		if ( ! is_admin() && in_the_loop() && $title == $post->post_title ) {
 			return "<span class='p-name'>$title</span>";
 		}
 

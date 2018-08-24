@@ -65,7 +65,8 @@ class UF2_Post {
 	 * Adds microformats v2 support to the post title.
 	 */
 	public static function the_title( $title ) {
-		if ( ! is_admin() && in_the_loop() ) {
+		global $post;
+		if ( ! is_admin() && in_the_loop() && $title == $post->post_title ) {
 			return "<span class='p-name'>$title</span>";
 		}
 
@@ -76,8 +77,10 @@ class UF2_Post {
 	 * Adds microformats v2 support to the post.
 	 */
 	public static function the_post( $post ) {
+		$url = esc_url( get_permalink() );
+		$pub = esc_attr( get_the_date( DATE_ATOM ) );
 		if ( ! is_admin() ) {
-			return "<div class='e-content'>$post</div>";
+			return "<data class='u-url' value='$url'></data><time class='dt-published' datetime='$pub'></time><div class='e-content'>$post</div>";
 		}
 
 		return $post;

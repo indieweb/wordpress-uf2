@@ -32,12 +32,10 @@ class UF2_Post {
 	public static function post_classes( $classes ) {
 		$classes = array_diff( $classes, array( 'hentry' ) );
 		if ( ! is_singular() ) {
-			if ( 'page' !== get_post_type() ) {
-				// Adds a class for microformats v2
-				$classes[] = 'h-entry';
-				// add hentry to the same tag as h-entry
-				$classes[] = 'hentry';
-			}
+			// Adds a class for microformats v2
+			$classes[] = 'h-entry';
+			// add hentry to the same tag as h-entry
+			$classes[] = 'hentry';
 		}
 		return array_unique( $classes );
 	}
@@ -53,10 +51,8 @@ class UF2_Post {
 			$classes[] = 'hfeed';
 			$classes[] = 'h-feed';
 		} else {
-			if ( 'page' !== get_post_type() ) {
-				$classes[] = 'hentry';
-				$classes[] = 'h-entry';
-			}
+			$classes[] = 'hentry';
+			$classes[] = 'h-entry';
 		}
 		return array_unique( $classes );
 	}

@@ -2,10 +2,10 @@
   "name": "wordpress-uf2",
   "description": "Microformats 2 for WordPress!",
   "dependencies": {
-    "grunt": "^0.4.5"
+    "grunt": "^1.4.1"
   },
   "devDependencies": {
-    "grunt": "^0.4.5",
+    "grunt": "^1.4.1",
     "grunt-wp-deploy": "^2.1.2",
     "grunt-wp-i18n": "^1.0.3",
     "grunt-wp-readme-to-markdown": "^2.1.0"

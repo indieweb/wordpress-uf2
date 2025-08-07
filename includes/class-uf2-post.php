@@ -72,11 +72,12 @@ class UF2_Post {
 	 * Adds microformats v2 support to the post.
 	 */
 	public static function the_post( $post ) {
-		if ( ! is_admin() ) {
-			return "<div class='e-content'>$post</div>";
+		if ( ! is_admin() &&
+			 ! ( function_exists( 'is_micropub_post' ) && is_micropub_post() ) ) {
+			return "<div class='e-content'>\n$post\n</div>";
 		}
 
-		return $post;
+		return "\n" . $post . "\n";
 	}
 
 	/**
